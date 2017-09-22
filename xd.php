@@ -7,3 +7,6 @@
  * hello
  * 
  */
+class xd
+{
+}
