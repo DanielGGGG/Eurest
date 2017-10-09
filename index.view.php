@@ -11,7 +11,7 @@
 <body>
 <div>
 <div class="background-img">
-    <img class="background-img" src="images/BlueCurves.jpg" alt="header" position="top" width="150%">
+    <img class="background-img" src="images/headerbackground.jpg" alt="header" position="top" width="150%">
 </div>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
@@ -31,16 +31,16 @@
                 <ul class="nav navbar-nav">
                     <!--<li <img class="topnav-icons fa fa-home w3-left w3-bar-item w3-button" href="#" src="images\homeicon.jpeg" alt="home" height="20%" width="20%" align="middle"> </li> -->
                     <li><img class="homeicon" href="#" src="images\homeicon.png" alt="home"></li>
-                    <li><a href="#">eerstelink<span class="sr-only">(current)</span></a></li>
-                    <li><a href="#">tweedelink</a></li>
+                    <li><a href="#1">eerste link<span class="sr-only">(current)</span></a></li>
+                    <li><a href="#2">tweedelink</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown? <span class="caret"></span></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#">link 1</a></li>
-                            <li><a href="#">link 2</a></li>
-                            <li><a href="#">link 3</a></li>
+                            <li><a href="#" style="color: #000000">link 1</a></li>
+                            <li><a href="#" style="color: #000000">link 2</a></li>
+                            <li><a href="#" style="color: #000000">link 3</a></li>
                             <li role="separator" class="divider"></li>
-                            <li><a href="#">losse link</a></li>
+                            <li><a href="#" style="color: #000000">losse link</a></li>
                         </ul>
                     </li>
                 </ul>
