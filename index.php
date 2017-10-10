@@ -1,11 +1,15 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: ko
- * Date: 21-9-2017
- * Time: 14:13
- */
-class index
-{
-    
+
+ob_start();
+session_start();
+
+include 'index.view.php';
+include 'lib/db.php';
+
+if(!isset($_SESSION['iduser'])) {
+    header('Location: login.php');
 }
+require 'productpagina.html';
+?>
+
+

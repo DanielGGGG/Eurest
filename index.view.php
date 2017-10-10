@@ -27,11 +27,11 @@
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="collapse navbar-collapse z-indexup" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <!--<li <img class="topnav-icons fa fa-home w3-left w3-bar-item w3-button" href="#" src="images\homeicon.jpeg" alt="home" height="20%" width="20%" align="middle"> </li> -->
-                    <li><img class="homeicon" href="#" src="images\homeicon.png" alt="home"></li>
-                    <li><a href="#1">eerste link<span class="sr-only">(current)</span></a></li>
+                    <li><a href="productpagina.php"> <img class="homeicon" src="images\homeicon.png" alt="home"></a></li>
+                    <li><a href="AboutPage.php">about<span class="sr-only">(current)</span></a></li>
                     <li><a href="#2">tweedelink</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown? <span class="caret"></span></a>
@@ -45,7 +45,11 @@
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#">Inloggen</a></li>
+                    <?php if(!isset($_SESSION['iduser'])) { ?>
+                        <li><a href="login.php">Inloggen</a></li>
+                    <?php } else { ?>
+                        <li><a href="logout.php">Uitloggen</a></li>
+                    <?php } ?>
                 </ul>
             </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
