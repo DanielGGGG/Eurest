@@ -11,7 +11,7 @@ include 'index.view.php';
 
     <!-- Instellingen voor hoe de webpagina gerenderd word op verschillende platforms -->
     <meta name="viewport"
-          content="width=device-width, user-scalable=yes, initial-scale=0.6, maximum-scale=1.5, minimum-scale=0.6"
+          content="width=device-width, user-scalable=yes, initial-scale=0.1, maximum-scale=1.0, minimum-scale=1"
           http-equiv="X-UA-Compatible" content="ie=edge" >
 
     <!-- Er wordt gebruikt gemaakt van het framework bootstrap-->
@@ -33,7 +33,7 @@ include 'index.view.php';
 
                 </div>
                 <div id="products" class="row list-group">
-                    <div class="item  col-xs-4 col-lg-4">
+                    <div class="item  col-xs-12 col-lg-4 col-md-6">
                         <div class="thumbnail">
                             <img class="group list-group-image" src="images/brownies.jpg" alt="" />
                             <div class="caption">
@@ -54,7 +54,7 @@ include 'index.view.php';
                             </div>
                         </div>
                     </div>
-                    <div class="item  col-xs-4 col-lg-4">
+                    <div class="item col-xs-12 col-lg-4 col-md-6">
                         <div class="thumbnail">
                             <img class="group list-group-image" src="images/broodje1.jpg" alt="#" />
                             <div class="caption">
@@ -75,7 +75,7 @@ include 'index.view.php';
                             </div>
                         </div>
                     </div>
-                    <div class="item  col-xs-4 col-lg-4">
+                    <div class="item  col-xs-12 col-lg-4 col-md-6">
                         <div class="thumbnail">
                             <img class="group list-group-image" src="images/cake.jpg" alt="#" />
                             <div class="caption">
@@ -96,7 +96,7 @@ include 'index.view.php';
                             </div>
                         </div>
                     </div>
-                    <div class="item  col-xs-4 col-lg-4">
+                    <div class="item col-xs-12 col-lg-4 col-md-6">
                         <div class="thumbnail">
                             <img class="group list-group-image" src="images/tostis.jpg" alt="#" />
                             <div class="caption">
@@ -117,7 +117,7 @@ include 'index.view.php';
                             </div>
                         </div>
                     </div>
-                    <div class="item  col-xs-4 col-lg-4">
+                    <div class="item  col-xs-12 col-lg-4 col-md-6">
                         <div class="thumbnail">
                             <img class="group list-group-image" src="images/broodje3.jpg" alt="#" />
                             <div class="caption">
@@ -137,7 +137,7 @@ include 'index.view.php';
                             </div>
                         </div>
                     </div>
-                    <div class="item  col-xs-4 col-lg-4">
+                    <div class="item  col-xs-12 col-lg-4 col-md-6">
                         <div class="thumbnail">
                             <img class="group list-group-image" src="images/broodje2.jpg" alt="#" />
                             <div class="caption">

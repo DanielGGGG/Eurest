@@ -15,6 +15,7 @@ include 'index.view.php';
             if(isset($_POST['login'])) {
                 $username = $_POST['email'];
                 $password = $_POST['password'];
+                $password = password_hash($password, PASSWORD_BCRYPT);
                 $result = $conn->prepare("SELECT idgebruiker FROM Gebruiker WHERE email = :username AND password = :password LIMIT 1");
                 $result->execute(array(':username' => $_POST['email'], ':password' => $_POST['password']));
 

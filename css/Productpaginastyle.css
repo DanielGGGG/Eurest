@@ -1,4 +1,5 @@
 .glyphicon { margin-right:5px; }
+
 .thumbnail
 {
     margin-bottom: 20px;
@@ -6,6 +7,8 @@
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
     border-radius: 0px;
+    min-height:380px;
+    position: relative;
 }
 .beschrijving{
     text-align: left;
@@ -56,4 +59,10 @@
 .list-group-item-text
 {
     margin: 0 0 11px;
+}
+
+.btn{
+    
+
+    bottom:0;
 }
