@@ -9,6 +9,7 @@
 class Connection
 {
     private $pdo;
+    private $productname;
 
     public function make()
     {
@@ -20,6 +21,8 @@ class Connection
             $pdoPassword = "dLYZKryVYe2kJb";
             $pdoDB = "code-runners";
             $this->pdo = new PDO($pdoDriver . ':host=' . $pdoHost . ';dbname=' . $pdoDB, $pdoUser, $pdoPassword);
+            $this->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
 
         } catch (PDOException $e) {
             die($e->getMessage());
@@ -42,14 +45,100 @@ class Connection
 
     public function insertProduct()
     {
-        $sql = 'INSERT INTO product($_POST["productimage"],
-                $_POST("productname"),
-                $_POST["productdescription"],
-                $_POST["alergics"],
-                $_POST["price"])';
+        $productimage = $_POST["productimage"];
+        $productname = $_POST["productname"];
+        $productdescription = $_POST["productdescription"];
+        $productalergics = $_POST["alergics"];
+        $productprice =  $_POST["price"];
 
-        $stmt= $this->pdo->prepare($sql);
+
+        $sql = 'INSERT INTO product
+                (:productfoto,
+                 :productnaampje,
+                 :beschrijving,
+                 :alergierer,
+                 :prijsje)';
+
+        $stmt = $this->pdo->prepare($sql);
+
+        $stmt->bindParam(':productfoto',$productimage, PDO::PARAM_STR);
+        $stmt->bindParam(':productnaampje',$productname,PDO::PARAM_STR);
+        $stmt->bindParam(':beschrijving',$productdescription);
+        $stmt->bindParam(':alergierer',$productalergics,PDO::PARAM_STR);
+        $stmt->bindParam(':prijsje',$productprice,PDO::PARAM_STR);
+
         $stmt->execute();
 
     }
+
+    public function removeProduct()
+    {
+
+        foreach ($_GET as $name => $content) {
+            $this->productname = $name;
+        }
+
+
+        $this->productname = str_replace('_', ' ', $this->productname);
+
+        $sql = "DELETE FROM product
+            where productnaam =:productnaamperd";
+
+
+
+        $stmt = $this->pdo->prepare($sql);
+
+        $stmt->bindParam(':productnaamperd',$this->productname,PDO::PARAM_STR);
+        $stmt->execute();
+
+
+    }
+
+    public function editProduct()
+    {
+        try {
+
+            $name = $_GET["productname"];
+            $description = $_GET["description"];
+            $alergics = $_GET["alergics"];
+            $price = floatval($_GET['price']);
+            $productimage = $_GET["productimage"];
+            $id = $_GET["id"];
+
+
+            $sql =
+                "UPDATE product SET 
+            productnaam =:naam,
+            productbeschrijving =:descriptie,
+            allergieen =:alergieren,
+            productprijs =:prijs,
+            productplaatje =:productafbeelding
+            WHERE idproduct =:productid";
+
+
+            $stmt = $this->pdo->prepare($sql);
+
+            $stmt->bindParam(':naam', $name, PDO::PARAM_STR);
+            $stmt->bindParam(':descriptie', $description, PDO::PARAM_STR);
+            $stmt->bindParam(':alergieren', $alergics, PDO::PARAM_STR);
+            $stmt->bindParam(':prijs', $price);
+            $stmt->bindParam(':productafbeelding', $productimage, PDO::PARAM_STR);
+            $stmt->bindParam(':productid', $id, PDO::PARAM_STR);
+
+
+            $stmt->execute();
+            echo $stmt->rowCount() . 'records UPDATED succesfully';
+
+
+        } catch (PDOException $e) {
+            echo $sql . '<br>' . $e->getMessage();
+
+        }
+    }
+
+
 }
+
+
+?>
+
